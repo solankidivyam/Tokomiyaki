@@ -7,4 +7,4 @@ A UI design for the project is made in FIGMA. Link here [Figma](https://www.figm
 
 # Sneek Peek
 
-![Screenshot](Login.png)
+![Screenshot](Login.png | width=100)
