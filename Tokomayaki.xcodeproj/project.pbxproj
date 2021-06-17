@@ -15,6 +15,7 @@
 		0C4E2FAB2679A95800F4EEED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C4E2FA92679A95800F4EEED /* LaunchScreen.storyboard */; };
 		0C4E2FB62679A95900F4EEED /* TokomayakiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4E2FB52679A95900F4EEED /* TokomayakiTests.swift */; };
 		0C4E2FC12679A95900F4EEED /* TokomayakiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4E2FC02679A95900F4EEED /* TokomayakiUITests.swift */; };
+		0CA7D63F267B5DA9002A3A23 /* Bulgatti.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0CA7D63E267B5DA9002A3A23 /* Bulgatti.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		0C4E2FBC2679A95900F4EEED /* TokomayakiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TokomayakiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C4E2FC02679A95900F4EEED /* TokomayakiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokomayakiUITests.swift; sourceTree = "<group>"; };
 		0C4E2FC22679A95900F4EEED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0CA7D63E267B5DA9002A3A23 /* Bulgatti.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bulgatti.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			children = (
 				0C4E2F9D2679A95300F4EEED /* Tokomayaki */,
 				0C4E2FB42679A95900F4EEED /* TokomayakiTests */,
+				0CA7D643267B5DBC002A3A23 /* font */,
 				0C4E2FBF2679A95900F4EEED /* TokomayakiUITests */,
 				0C4E2F9C2679A95300F4EEED /* Products */,
 			);
@@ -126,6 +129,14 @@
 				0C4E2FC22679A95900F4EEED /* Info.plist */,
 			);
 			path = TokomayakiUITests;
+			sourceTree = "<group>";
+		};
+		0CA7D643267B5DBC002A3A23 /* font */ = {
+			isa = PBXGroup;
+			children = (
+				0CA7D63E267B5DA9002A3A23 /* Bulgatti.ttf */,
+			);
+			path = font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +242,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CA7D63F267B5DA9002A3A23 /* Bulgatti.ttf in Resources */,
 				0C4E2FAB2679A95800F4EEED /* LaunchScreen.storyboard in Resources */,
 				0C4E2FA82679A95800F4EEED /* Assets.xcassets in Resources */,
 				0C4E2FA62679A95300F4EEED /* Main.storyboard in Resources */,
