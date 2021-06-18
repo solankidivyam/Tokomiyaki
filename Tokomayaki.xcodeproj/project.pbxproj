@@ -16,6 +16,7 @@
 		0C4E2FB62679A95900F4EEED /* TokomayakiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4E2FB52679A95900F4EEED /* TokomayakiTests.swift */; };
 		0C4E2FC12679A95900F4EEED /* TokomayakiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4E2FC02679A95900F4EEED /* TokomayakiUITests.swift */; };
 		0C6F4C94267BADB20078D516 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F4C93267BADB20078D516 /* Register.swift */; };
+		0C6F4C9F267C6C620078D516 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F4C9E267C6C620078D516 /* Extensions.swift */; };
 		0CA7D63F267B5DA9002A3A23 /* Bulgatti.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0CA7D63E267B5DA9002A3A23 /* Bulgatti.ttf */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		0C4E2FC02679A95900F4EEED /* TokomayakiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokomayakiUITests.swift; sourceTree = "<group>"; };
 		0C4E2FC22679A95900F4EEED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C6F4C93267BADB20078D516 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
+		0C6F4C9E267C6C620078D516 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0CA7D63E267B5DA9002A3A23 /* Bulgatti.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bulgatti.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,6 +114,7 @@
 				0C4E2FA72679A95800F4EEED /* Assets.xcassets */,
 				0C4E2FA92679A95800F4EEED /* LaunchScreen.storyboard */,
 				0C4E2FAC2679A95800F4EEED /* Info.plist */,
+				0C6F4C9E267C6C620078D516 /* Extensions.swift */,
 			);
 			path = Tokomayaki;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C6F4C9F267C6C620078D516 /* Extensions.swift in Sources */,
 				0C4E2FA32679A95300F4EEED /* ViewController.swift in Sources */,
 				0C4E2F9F2679A95300F4EEED /* AppDelegate.swift in Sources */,
 				0C6F4C94267BADB20078D516 /* Register.swift in Sources */,
