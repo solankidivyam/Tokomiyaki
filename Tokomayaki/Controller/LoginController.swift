@@ -39,6 +39,31 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         
     }()
     
+    private let label: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.font = UIFont(name: "Avenir", size: 25)
+        label.textColor = UIColor.white
+        label.text = "Log in"
+        label.numberOfLines = 0
+        
+        return label
+    }()
+    
+    private let textField1: UITextField = {
+       
+        let textField = UITextField()
+        textField.font = UIFont(name: "Avenir", size: 15)
+        textField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.5568627451, green: 0.5568627451, blue: 0.5568627451, alpha: 1)])
+        
+        textField.borderStyle = UITextField.BorderStyle.roundedRect
+        textField.autocorrectionType = UITextAutocorrectionType.no
+//        textField.layer.borderWidth = 0.25
+        textField.layer.cornerRadius = textField.frame.size.height / 2
+        textField.keyboardType = UIKeyboardType.default
+        return textField
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,16 +77,25 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         view.addSubview(imageView2)
         view.addSubview(imageView1)
         view.addSubview(imageView)
+        view.addSubview(textField1)
+        view.addSubview(label)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
    
+        
+        textField1.frame = CGRect(x: view.frame.midX/3 + 25, y: view.safeAreaInsets.top + 220, width: 220, height: 37)
+            
+        
+        label.frame = CGRect(x: view.frame.midX/3 + 15, y: view.safeAreaInsets.top + 130, width: 100, height: 100)
+        
         imageView.frame = CGRect(x: view.frame.midX/3, y: view.safeAreaInsets.top - 50, width: view.frame.size.width-150, height: view.frame.size.width - 150)
         
         imageView1.frame = CGRect(x: view.frame.midX/3 - view.frame.midY/4, y: view.safeAreaInsets.top + 80, width: view.frame.size.width+100, height: view.frame.size.width + 100)
         
         imageView2.frame = CGRect(x: view.frame.midX/7, y: view.safeAreaInsets.top + 500, width: view.frame.size.width-50, height: view.frame.size.width - 50)
+        
         
     }
     
