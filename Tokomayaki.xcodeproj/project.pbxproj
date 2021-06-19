@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C2C6654267DDF8B00C53B18 /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2C6653267DDF8B00C53B18 /* SignupController.swift */; };
 		0C4E2F9F2679A95300F4EEED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4E2F9E2679A95300F4EEED /* AppDelegate.swift */; };
 		0C4E2FA12679A95300F4EEED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4E2FA02679A95300F4EEED /* SceneDelegate.swift */; };
 		0C4E2FA32679A95300F4EEED /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4E2FA22679A95300F4EEED /* LoginController.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C2C6653267DDF8B00C53B18 /* SignupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
 		0C4E2F9B2679A95300F4EEED /* Tokomayaki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tokomayaki.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C4E2F9E2679A95300F4EEED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C4E2FA02679A95300F4EEED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				0C4E2FA22679A95300F4EEED /* LoginController.swift */,
+				0C2C6653267DDF8B00C53B18 /* SignupController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				0C6F4C9F267C6C620078D516 /* Extensions.swift in Sources */,
 				0C4E2FA32679A95300F4EEED /* LoginController.swift in Sources */,
 				0C4E2F9F2679A95300F4EEED /* AppDelegate.swift in Sources */,
+				0C2C6654267DDF8B00C53B18 /* SignupController.swift in Sources */,
 				0C6F4C94267BADB20078D516 /* Register.swift in Sources */,
 				0C4E2FA12679A95300F4EEED /* SceneDelegate.swift in Sources */,
 			);

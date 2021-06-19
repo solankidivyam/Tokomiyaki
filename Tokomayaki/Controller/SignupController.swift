@@ -1,16 +1,15 @@
 //
-//  ViewController.swift
+//  SignupController.swift
 //  Tokomayaki
 //
-//  Created by Divyam Solanki on 16/06/21.
+//  Created by Divyam Solanki on 19/06/21.
 //
 
 import UIKit
 
-class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class SignupController: UIViewController {
     
-    //An Image view for the logo
-    private let imageView: UIImageView = {
+    private let imageView3: UIImageView = {
     
     let imageView = UIImageView()
     imageView.image = UIImage(named: "Logo2")
@@ -19,21 +18,21 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         
     }()
     
-    private let button1: UIButton = {
+    private let button3: UIButton = {
         let button = UIButton()
         button.backgroundColor = #colorLiteral(red: 0.9450980392, green: 0.9490196078, blue: 0.768627451, alpha: 1)
         button.titleLabel?.font = .systemFont(ofSize: 16, weight: .light)
-        button.setTitle("Log in", for: .normal)
+        button.setTitle("Sign Up", for: .normal)
         button.layer.cornerRadius = 12
         button.setTitleColor(#colorLiteral(red: 0.3960784314, green: 0.3960784314, blue: 0.3960784314, alpha: 1), for: UIControl.State.normal)
         return button
         
     }()
     
-    private let button2: UIButton = {
+    private let button4: UIButton = {
         let button = UIButton()
-        button.titleLabel?.font = .systemFont(ofSize: 20, weight: .light)
-        button.setTitle("Sign Up?", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 18, weight: .light)
+        button.setTitle("Login?", for: .normal)
         button.layer.cornerRadius = 12
         button.setTitleColor(#colorLiteral(red: 0.9559958577, green: 0.9549930692, blue: 0.8105223179, alpha: 1), for: UIControl.State.normal)
         return button
@@ -41,7 +40,7 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
     }()
     
     //An Image view for the Background
-    private let imageView1: UIImageView = {
+    private let imageView4: UIImageView = {
     
     let imageView = UIImageView()
     imageView.image = UIImage(named: "Rec1")
@@ -51,7 +50,7 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
     }()
     
     //For the van
-    private let imageView2: UIImageView = {
+    private let imageView5: UIImageView = {
     
     let imageView = UIImageView()
     imageView.image = UIImage(named: "Van")
@@ -60,18 +59,18 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         
     }()
     
-    private let label: UILabel = {
+    private let label3: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.font = UIFont(name: "Avenir", size: 25)
         label.textColor = UIColor.white
-        label.text = "Log in"
+        label.text = "Sign Up"
         label.numberOfLines = 0
         
         return label
     }()
     
-    private let label1: UILabel = {
+    private let label4: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.font = UIFont(name: "Avenir", size: 18)
@@ -82,19 +81,19 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         return label
     }()
     
-    private let label2: UILabel = {
+    private let label5: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.font = UIFont(name: "Avenir", size: 10)
         label.textColor = UIColor.white
         label.textAlignment = .center
-        label.text = "Create and account to be a part of Toko family, we deliver the best in class ice-creams across Japan and Taiwan. Starting soon in USA, Canada and UK..."
+        label.text = "If already a member of Toko family.."
         label.numberOfLines = 0
         
         return label
     }()
     
-    private let textField1: UITextField = {
+    private let textField3: UITextField = {
        
         let textField = UITextField()
 //        textField.layer.cornerRadius = 15.0
@@ -109,7 +108,7 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         return textField
     }()
     
-    private let textField2: UITextField = {
+    private let textField4: UITextField = {
        
         let textField = UITextField()
 //        textField.layer.cornerRadius = 15.0
@@ -124,33 +123,46 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         return textField
     }()
     
+    private let textField5: UITextField = {
+       
+        let textField = UITextField()
+//        textField.layer.cornerRadius = 15.0
+        textField.font = UIFont(name: "Avenir Next", size: 15)
+//        textField.borderStyle = UITextField.BorderStyle.roundedRect
+        textField.setCorner(radius: 12)
+        textField.setLeftPaddingPoints(15)
+        textField.backgroundColor = UIColor.white
+        textField.attributedPlaceholder = NSAttributedString(string: "Full Name", attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.7254901961, green: 0.7254901961, blue: 0.7254901961, alpha: 1)])
+        
+        textField.keyboardType = UIKeyboardType.default
+        return textField
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
-        //Adding a Background Color
-        
-        let color: UIColor = #colorLiteral(red: 0.4274509804, green: 0.8392156863, blue: 0.631372549, alpha: 1)
+        let color: UIColor = #colorLiteral(red: 0.3695068359, green: 0.8321683407, blue: 0.6322148442, alpha: 1)
         self.view.backgroundColor = color
         
-        view.addSubview(imageView2)
-        view.addSubview(imageView1)
-        view.addSubview(imageView)
-        view.addSubview(textField1)
-        view.addSubview(textField2)
-        view.addSubview(label)
-        view.addSubview(label1)
-        view.addSubview(label2)
-        view.addSubview(button1)
-        view.addSubview(button2)
+//        title = "Sign up"
+        viewSafeAreaInsetsDidChange()
+        view.addSubview(imageView3)
+        view.addSubview(imageView4)
+        view.addSubview(imageView5)
+        view.addSubview(textField3)
+        view.addSubview(textField4)
+        view.addSubview(textField5)
+        view.addSubview(label3)
+        view.addSubview(label4)
+        view.addSubview(label5)
+        view.addSubview(button3)
+        view.addSubview(button4)
         
-        button2.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
-        
+        button4.addTarget(self, action: #selector(didTapButton1), for: .touchUpInside)
     }
     
-    @objc private func didTapButton() {
-        let notVC = SignupController()
+    @objc private func didTapButton1() {
+        let notVC = LoginController()
         
         let navVC = UINavigationController(rootViewController: notVC)
         navVC.modalPresentationStyle = .overFullScreen
@@ -159,31 +171,33 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         present(navVC, animated: true)
     }
     
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-   
+    
+        imageView3.frame = CGRect(x: view.frame.midX/3, y: view.safeAreaInsets.top - 50, width: view.frame.size.width-150, height: view.frame.size.width - 150)
         
-        button1.frame = CGRect(x: view.frame.size.width/3 + 10, y: view.safeAreaInsets.top + 330, width: 120, height: 37)
+        button3.frame = CGRect(x: view.frame.size.width/3 + 10, y: view.safeAreaInsets.top + 380, width: 120, height: 37)
         
-        button2.frame = CGRect(x: view.frame.size.width/3 + 20, y: view.safeAreaInsets.top + 400, width: 100, height: 37)
+        button4.frame = CGRect(x: view.frame.size.width/3 + 20, y: view.safeAreaInsets.top + 445, width: 100, height: 37)
         
-        textField1.frame = CGRect(x: view.frame.midX/3 + 30, y: view.safeAreaInsets.top + 220, width: 220, height: 37)
+        textField3.frame = CGRect(x: view.frame.midX/3 + 30, y: view.safeAreaInsets.top + 220, width: 220, height: 37)
         
-        textField2.frame = CGRect(x: view.frame.midX/3 + 30, y: view.safeAreaInsets.top + 270, width: 220, height: 37)
-            
-        label.frame = CGRect(x: view.frame.midX/3 + 15, y: view.safeAreaInsets.top + 130, width: 100, height: 100)
+        textField4.frame = CGRect(x: view.frame.midX/3 + 30, y: view.safeAreaInsets.top + 270, width: 220, height: 37)
         
-        label1.frame = CGRect(x: view.frame.size.width/3 + 45, y: view.safeAreaInsets.top + 365, width: 50, height: 50)
+        textField5.frame = CGRect(x: view.frame.midX/3 + 30, y: view.safeAreaInsets.top + 320, width: 220, height: 37)
         
-        label2.frame = CGRect(x: view.frame.size.width/3 - 52, y: view.safeAreaInsets.top + 420, width: 240, height: 100)
+        label3.frame = CGRect(x: view.frame.midX/3 + 15, y: view.safeAreaInsets.top + 130, width: 100, height: 100)
         
-        imageView.frame = CGRect(x: view.frame.midX/3, y: view.safeAreaInsets.top - 50, width: view.frame.size.width-150, height: view.frame.size.width - 150)
+        label4.frame = CGRect(x: view.frame.size.width/3 + 45, y: view.safeAreaInsets.top + 410, width: 50, height: 50)
         
-        imageView1.frame = CGRect(x: view.frame.midX/3 - view.frame.midY/4, y: view.safeAreaInsets.top + 80, width: view.frame.size.width+100, height: view.frame.size.width + 100)
+        label5.frame = CGRect(x: view.frame.size.width/3 - 52, y: view.safeAreaInsets.top + 445, width: 240, height: 100)
         
-        imageView2.frame = CGRect(x: view.frame.midX/7, y: view.safeAreaInsets.top + 500, width: view.frame.size.width-50, height: view.frame.size.width - 50)
+        imageView4.frame = CGRect(x: view.frame.midX/3 - view.frame.midY/4, y: view.safeAreaInsets.top + 80, width: view.frame.size.width+100, height: view.frame.size.width + 100)
         
+        imageView5.frame = CGRect(x: view.frame.midX/7, y: view.safeAreaInsets.top + 500, width: view.frame.size.width-50, height: view.frame.size.width - 50)
         
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -196,8 +210,4 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
-
-
 }
-
-
