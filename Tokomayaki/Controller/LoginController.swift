@@ -8,7 +8,7 @@
 import UIKit
 
 class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    
     //An Image view for the logo
     private let imageView: UIImageView = {
     
@@ -53,13 +53,14 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
     private let textField1: UITextField = {
        
         let textField = UITextField()
+//        textField.layer.cornerRadius = 15.0
         textField.font = UIFont(name: "Avenir", size: 15)
+//        textField.borderStyle = UITextField.BorderStyle.roundedRect
+        textField.setCorner(radius: 12)
+        textField.setLeftPaddingPoints(15)
+        textField.backgroundColor = UIColor.white
         textField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.5568627451, green: 0.5568627451, blue: 0.5568627451, alpha: 1)])
         
-        textField.borderStyle = UITextField.BorderStyle.roundedRect
-        textField.autocorrectionType = UITextAutocorrectionType.no
-//        textField.layer.borderWidth = 0.25
-        textField.layer.cornerRadius = textField.frame.size.height / 2
         textField.keyboardType = UIKeyboardType.default
         return textField
     }()
@@ -85,7 +86,7 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         super.viewDidLayoutSubviews()
    
         
-        textField1.frame = CGRect(x: view.frame.midX/3 + 25, y: view.safeAreaInsets.top + 220, width: 220, height: 37)
+        textField1.frame = CGRect(x: view.frame.midX/3 + 30, y: view.safeAreaInsets.top + 220, width: 220, height: 37)
             
         
         label.frame = CGRect(x: view.frame.midX/3 + 15, y: view.safeAreaInsets.top + 130, width: 100, height: 100)
