@@ -30,11 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.initialize(with: configuration)
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        
         window?.makeKeyAndVisible()
         window?.rootViewController = UINavigationController(rootViewController: LoginController())
-        
-        
         
         return true
     }
