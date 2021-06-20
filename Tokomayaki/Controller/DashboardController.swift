@@ -23,7 +23,7 @@ class DashboardController: UIViewController, UIImagePickerControllerDelegate, UI
     private let logout: UIButton = {
         let button = UIButton()
         button.titleLabel?.font = .systemFont(ofSize: 18, weight: .light)
-        button.setTitle("Login?", for: .normal)
+        button.setTitle("Log Out", for: .normal)
         button.layer.cornerRadius = 12
         button.setTitleColor(#colorLiteral(red: 0.9559958577, green: 0.9549930692, blue: 0.8105223179, alpha: 1), for: UIControl.State.normal)
         return button
@@ -33,7 +33,7 @@ class DashboardController: UIViewController, UIImagePickerControllerDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let color: UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        let color: UIColor = #colorLiteral(red: 0.3695068359, green: 0.8321683407, blue: 0.6322148442, alpha: 1)
         self.view.backgroundColor = color
         view.addSubview(logout)
         logout.addTarget(self, action: #selector(logoutBut), for: .touchUpInside)

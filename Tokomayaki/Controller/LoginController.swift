@@ -148,7 +148,7 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         view.addSubview(button2)
         
         button2.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
-//        button1.addTarget(self, action: #selector(signin), for: .touchUpInside)
+        button1.addTarget(self, action: #selector(signin), for: .touchUpInside)
         button1.addTarget(self, action: #selector(dash), for: .touchUpInside)
         
     }
@@ -172,7 +172,7 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
                   (user: PFUser?, error: Error?) -> Void in
                   if user != nil {
                     self.displayAlert(withTitle: "Login Successful", message: "")
-//                    self.dashboardIn()
+//                    self.dash(DashboardController())
 //                    self.show(DashboardController())
 //                    self.button1.addTarget(self, action: #selector(self.dashboardIn), for: .touchUpInside)
                   } else {
@@ -184,30 +184,25 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
     
     func displayAlert(withTitle title: String, message: String) {
             let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "Ok", style: .default)
-            alert.addAction(okAction)
+//            let okAction = UIAlertAction(title: "Ok", style: .default)
+//            alert.addAction(okAction)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+                print("Yay! You brought your towel!")
+            }))
             self.present(alert, animated: true)
         }
-    
-//    func dashboardIn() {
-//
-//        let dashVC = DashboardController()
-//        let navVC1 = UINavigationController(rootViewController: dashVC)
-//        navVC1.modalPresentationStyle = .overFullScreen
-//        navVC1.modalTransitionStyle = .crossDissolve
-//        self.navigationController?.pushViewController(dashVC, animated: true)
-//
-//
-//
-//    }
+
     
     @objc func dash(_ vc: DashboardController) {
+        
         
         let dashVC = DashboardController()
         let navVC1 = UINavigationController(rootViewController: dashVC)
         navVC1.modalPresentationStyle = .overFullScreen
         navVC1.modalTransitionStyle = .crossDissolve
         self.navigationController?.pushViewController(dashVC, animated: true)
+        
+        
 //        self.present(dashVC, animated: true, completion: nil)
         
     }
