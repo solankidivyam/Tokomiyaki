@@ -6,6 +6,8 @@
 //
 
 import UIKit
+//import Parse
+
 
 class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     

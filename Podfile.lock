@@ -1,0 +1,26 @@
+PODS:
+  - Bolts/Tasks (1.9.1)
+  - Parse (1.19.2):
+    - Parse/Core (= 1.19.2)
+  - Parse/Core (1.19.2):
+    - Bolts/Tasks (= 1.9.1)
+  - ParseSwift (1.8.3)
+
+DEPENDENCIES:
+  - Parse
+  - ParseSwift
+
+SPEC REPOS:
+  trunk:
+    - Bolts
+    - Parse
+    - ParseSwift
+
+SPEC CHECKSUMS:
+  Bolts: 8c1e8aab2f603387b8b9924f57d1d64f43d3ffdc
+  Parse: 081fb8755c3000fd11df817eec235def233d0af3
+  ParseSwift: 8ba6a5f6d06aa91c95dcfbbfd22dedbc3d346b5b
+
+PODFILE CHECKSUM: ad77304962a717580074e6fd60be8a7e3e7bd9ca
+
+COCOAPODS: 1.10.1

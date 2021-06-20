@@ -1,0 +1,6 @@
+framework module ParseSwift {
+  umbrella header "ParseSwift-umbrella.h"
+
+  export *
+  module * { export * }
+}

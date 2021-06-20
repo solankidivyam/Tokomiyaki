@@ -1,0 +1,6 @@
+framework module Pods_Tokomayaki_TokomayakiUITests {
+  umbrella header "Pods-Tokomayaki-TokomayakiUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
