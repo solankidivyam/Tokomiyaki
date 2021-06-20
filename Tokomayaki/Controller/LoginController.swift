@@ -182,18 +182,20 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
     
     func displayAlert(withTitle title: String, message: String) {
             let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-//            let okAction = UIAlertAction(title: "Ok", style: .default)
-//            alert.addAction(okAction)
-            
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+                
+                //For debugging
                 print("Yay! You brought your towel!")
                 
-                let dashVC = DashboardController()
-                let navVC1 = UINavigationController(rootViewController: dashVC)
-                navVC1.modalPresentationStyle = .overFullScreen
-                navVC1.modalTransitionStyle = .crossDissolve
-//                    self.navigationController?.pushViewController(dashVC, animated: true)
-                self.present(navVC1, animated: true)
+                if(title == "Login Successful") {
+                    let dashVC = DashboardController()
+                    let navVC1 = UINavigationController(rootViewController: dashVC)
+                    navVC1.modalPresentationStyle = .overFullScreen
+                    navVC1.modalTransitionStyle = .crossDissolve
+
+                    self.present(navVC1, animated: true)
+                }
+               
 
             }))
             alert.addChild(DashboardController())
@@ -207,10 +209,10 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         let navVC1 = UINavigationController(rootViewController: dashVC)
         navVC1.modalPresentationStyle = .overFullScreen
         navVC1.modalTransitionStyle = .crossDissolve
-        self.navigationController?.pushViewController(dashVC, animated: true)
+//        self.navigationController?.pushViewController(dashVC, animated: true)
+        self.present(navVC1, animated: true)
         
-        
-//        self.present(dashVC, animated: true, completion: nil)
+
         
     }
    
@@ -241,8 +243,6 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         
         
     }
-    
-    
     
     
     override func viewWillAppear(_ animated: Bool) {
