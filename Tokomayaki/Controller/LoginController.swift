@@ -6,7 +6,7 @@
 //
 
 import UIKit
-//import Parse
+import Parse
 
 
 class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -105,8 +105,8 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         textField.setCorner(radius: 12)
         textField.setLeftPaddingPoints(15)
         textField.backgroundColor = UIColor.white
-        textField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.7254901961, green: 0.7254901961, blue: 0.7254901961, alpha: 1)])
-        
+        textField.attributedPlaceholder = NSAttributedString(string: "Username", attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.7254901961, green: 0.7254901961, blue: 0.7254901961, alpha: 1)])
+        textField.autocapitalizationType = .none
         textField.keyboardType = UIKeyboardType.default
         return textField
     }()
@@ -121,7 +121,7 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         textField.setLeftPaddingPoints(15)
         textField.backgroundColor = UIColor.white
         textField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.7254901961, green: 0.7254901961, blue: 0.7254901961, alpha: 1)])
-        
+        textField.isSecureTextEntry = true
         textField.keyboardType = UIKeyboardType.default
         return textField
     }()
@@ -148,8 +148,12 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         view.addSubview(button2)
         
         button2.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+        button1.addTarget(self, action: #selector(signin), for: .touchUpInside)
         
     }
+    
+    
+    
     
     @objc private func didTapButton() {
         let notVC = SignupController()
@@ -160,6 +164,8 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         
         present(navVC, animated: true)
     }
+    
+   
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -188,15 +194,53 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         
     }
     
+    @objc func signin(_ sender: Any) {
+        
+        PFUser.logInWithUsername(inBackground: self.textField1.text!, password: self.textField2.text!) {
+                  (user: PFUser?, error: Error?) -> Void in
+                  if user != nil {
+//                    self.displayAlert(withTitle: "Login Successful", message: "")
+                    self.dashboardIn()
+                  } else {
+                    self.displayAlert(withTitle: "Error", message: error!.localizedDescription)
+                  }
+                }
+        }
+    
+    
+    func displayAlert(withTitle title: String, message: String) {
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Ok", style: .default)
+            alert.addAction(okAction)
+            self.present(alert, animated: true)
+        }
+    
+    func dashboardIn() {
+        
+        let dashVC = DashboardController()
+        
+        
+        let navVC1 = UINavigationController(rootViewController: dashVC)
+        navVC1.modalPresentationStyle = .overFullScreen
+        navVC1.modalTransitionStyle = .crossDissolve
+        
+        self.present(navVC1, animated: true)
+        
+    }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
+    
+    
     
 
 

@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import Parse
 
 class SignupController: UIViewController {
+    
+    weak var indicatorSignup: UIActivityIndicatorView!
     
     private let imageView3: UIImageView = {
     
@@ -96,14 +99,12 @@ class SignupController: UIViewController {
     private let textField3: UITextField = {
        
         let textField = UITextField()
-//        textField.layer.cornerRadius = 15.0
         textField.font = UIFont(name: "Avenir Next", size: 15)
-//        textField.borderStyle = UITextField.BorderStyle.roundedRect
         textField.setCorner(radius: 12)
         textField.setLeftPaddingPoints(15)
         textField.backgroundColor = UIColor.white
         textField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.7254901961, green: 0.7254901961, blue: 0.7254901961, alpha: 1)])
-        
+        textField.autocapitalizationType = .none
         textField.keyboardType = UIKeyboardType.default
         return textField
     }()
@@ -111,14 +112,12 @@ class SignupController: UIViewController {
     private let textField4: UITextField = {
        
         let textField = UITextField()
-//        textField.layer.cornerRadius = 15.0
         textField.font = UIFont(name: "Avenir Next", size: 15)
-//        textField.borderStyle = UITextField.BorderStyle.roundedRect
         textField.setCorner(radius: 12)
         textField.setLeftPaddingPoints(15)
         textField.backgroundColor = UIColor.white
         textField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.7254901961, green: 0.7254901961, blue: 0.7254901961, alpha: 1)])
-        
+        textField.isSecureTextEntry = true
         textField.keyboardType = UIKeyboardType.default
         return textField
     }()
@@ -126,14 +125,12 @@ class SignupController: UIViewController {
     private let textField5: UITextField = {
        
         let textField = UITextField()
-//        textField.layer.cornerRadius = 15.0
         textField.font = UIFont(name: "Avenir Next", size: 15)
-//        textField.borderStyle = UITextField.BorderStyle.roundedRect
         textField.setCorner(radius: 12)
         textField.setLeftPaddingPoints(15)
         textField.backgroundColor = UIColor.white
-        textField.attributedPlaceholder = NSAttributedString(string: "Full Name", attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.7254901961, green: 0.7254901961, blue: 0.7254901961, alpha: 1)])
-        
+        textField.attributedPlaceholder = NSAttributedString(string: "Username", attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.7254901961, green: 0.7254901961, blue: 0.7254901961, alpha: 1)])
+        textField.autocapitalizationType = .none
         textField.keyboardType = UIKeyboardType.default
         return textField
     }()
@@ -144,7 +141,6 @@ class SignupController: UIViewController {
         let color: UIColor = #colorLiteral(red: 0.3695068359, green: 0.8321683407, blue: 0.6322148442, alpha: 1)
         self.view.backgroundColor = color
         
-//        title = "Sign up"
         viewSafeAreaInsetsDidChange()
         view.addSubview(imageView3)
         view.addSubview(imageView4)
@@ -159,6 +155,7 @@ class SignupController: UIViewController {
         view.addSubview(button4)
         
         button4.addTarget(self, action: #selector(didTapButton1), for: .touchUpInside)
+        button3.addTarget(self, action: #selector(signup), for: .touchUpInside)
     }
     
     @objc private func didTapButton1() {
@@ -200,6 +197,34 @@ class SignupController: UIViewController {
     
     }
     
+    @objc func signup(_ sender: Any) {
+            
+        let user = PFUser()
+        
+        user.email = self.textField3.text
+        user.password = self.textField4.text
+        user.username = self.textField5.text
+        
+        self.indicatorSignup?.startAnimating()
+                user.signUpInBackground {(succeeded: Bool, error: Error?) -> Void in
+                    self.indicatorSignup?.stopAnimating()
+                    if let error = error {
+                        self.displayAlert(withTitle: "Error", message: error.localizedDescription)
+                    } else {
+                        self.displayAlert(withTitle: "Success", message: "Account has been successfully created")
+                    }
+                }
+    }
+    
+    
+    func displayAlert(withTitle title: String, message: String) {
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Ok", style: .default)
+            alert.addAction(okAction)
+            self.present(alert, animated: true)
+        }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -209,5 +234,8 @@ class SignupController: UIViewController {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
+    
+    
+   
     
 }
