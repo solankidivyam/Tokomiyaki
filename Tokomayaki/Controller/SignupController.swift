@@ -184,7 +184,7 @@ class SignupController: UIViewController {
         
         textField5.frame = CGRect(x: view.frame.midX/3 + 30, y: view.safeAreaInsets.top + 320, width: 220, height: 37)
         
-        label3.frame = CGRect(x: view.frame.midX/3 + 15, y: view.safeAreaInsets.top + 130, width: 100, height: 100)
+        label3.frame = CGRect(x: view.frame.midX/3 + 15, y: view.safeAreaInsets.top + 140, width: 100, height: 100)
         
         label4.frame = CGRect(x: view.frame.size.width/3 + 45, y: view.safeAreaInsets.top + 410, width: 50, height: 50)
         
