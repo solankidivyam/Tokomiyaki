@@ -20,6 +20,7 @@
 		0C5942FB268035F700019BD3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5942FA268035F700019BD3 /* LoginView.swift */; };
 		0C5942FE2680367D00019BD3 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5942FD2680367D00019BD3 /* LoginViewModel.swift */; };
 		0C594301268044D200019BD3 /* ChooseArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C594300268044D200019BD3 /* ChooseArea.swift */; };
+		0C5943032680461900019BD3 /* MyMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5943022680461900019BD3 /* MyMap.swift */; };
 		0C6F4C94267BADB20078D516 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F4C93267BADB20078D516 /* Register.swift */; };
 		0C6F4C9F267C6C620078D516 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F4C9E267C6C620078D516 /* Extensions.swift */; };
 		0C9E5253267F2A4900818E42 /* ParseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0C9E5252267F2A4900818E42 /* ParseSwift */; };
@@ -69,6 +70,7 @@
 		0C5942FA268035F700019BD3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		0C5942FD2680367D00019BD3 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		0C594300268044D200019BD3 /* ChooseArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseArea.swift; sourceTree = "<group>"; };
+		0C5943022680461900019BD3 /* MyMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMap.swift; sourceTree = "<group>"; };
 		0C6F4C93267BADB20078D516 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		0C6F4C9E267C6C620078D516 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0CA7D63E267B5DA9002A3A23 /* Bulgatti.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bulgatti.ttf; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				0C594300268044D200019BD3 /* ChooseArea.swift */,
+				0C5943022680461900019BD3 /* MyMap.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				0C4E2FA32679A95300F4EEED /* LoginController.swift in Sources */,
 				0C4E2F9F2679A95300F4EEED /* AppDelegate.swift in Sources */,
 				0C2C6654267DDF8B00C53B18 /* SignupController.swift in Sources */,
+				0C5943032680461900019BD3 /* MyMap.swift in Sources */,
 				0C6F4C94267BADB20078D516 /* Register.swift in Sources */,
 				0C5942F6267F71EF00019BD3 /* DashboardController.swift in Sources */,
 				0C5942FB268035F700019BD3 /* LoginView.swift in Sources */,

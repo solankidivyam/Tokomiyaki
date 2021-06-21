@@ -251,13 +251,14 @@ class SignupController: UIViewController {
         self.indicatorSignup?.startAnimating()
         user.signUpInBackground {(succeeded: Bool, error: Error?) -> Void in
                     self.indicatorSignup?.stopAnimating()
-                    if let error = error {
+                    if let error = error  {
                         self.displayAlert(withTitle: "Error", message: error.localizedDescription)
                     }
-                    if (user.email!.count > 56) {
+                    //Contraints
+                    if (user.email!.count > 56 || (error != nil)) {
                         self.displayAlert(withTitle: "More than 56 values in email", message: "Try shorting")
                     }
-                    if (user.password!.count < 6 || user.password!.count > 27) {
+                    if (user.password!.count < 6 || user.password!.count > 27 || (error != nil)) {
                         self.displayAlert(withTitle: "Try changing password", message: "Should be greater than 6 characters")
                     }
                     else {
