@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import Parse
+import SwiftUI
 
 class DashboardController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
  
@@ -163,7 +164,16 @@ class DashboardController: UIViewController, UIImagePickerControllerDelegate, UI
         
         // Adding the functionality of the buttons
         logout.addTarget(self, action: #selector(logoutBut), for: .touchUpInside)
+        button.addTarget(self, action: #selector(didTapButton4), for: .touchUpInside)
         
+    }
+    
+    // Adding the map
+    @objc func didTapButton4() {
+        let vc = UIHostingController(rootView: ChooseArea())
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true, completion: nil)
     }
 
     
