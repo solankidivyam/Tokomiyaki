@@ -11,6 +11,7 @@ import Parse
 
 class DashboardController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
  
+    //An Image view for the logo 2
     private let imageViewDash: UIImageView = {
     
     let imageView = UIImageView()
@@ -20,6 +21,7 @@ class DashboardController: UIViewController, UIImagePickerControllerDelegate, UI
         
     }()
     
+    //Shipping image
     private let imageShip: UIImageView = {
     
     let imageView = UIImageView()
@@ -29,6 +31,7 @@ class DashboardController: UIViewController, UIImagePickerControllerDelegate, UI
         
     }()
     
+    //Label
     private let label: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
@@ -40,6 +43,7 @@ class DashboardController: UIViewController, UIImagePickerControllerDelegate, UI
         return label
     }()
     
+    //Label
     private let label2: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
@@ -52,6 +56,7 @@ class DashboardController: UIViewController, UIImagePickerControllerDelegate, UI
         return label
     }()
     
+    //Label
     private let label3: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
@@ -64,6 +69,7 @@ class DashboardController: UIViewController, UIImagePickerControllerDelegate, UI
         return label
     }()
     
+    // Rectangle UI components
     private let imageRec: UIImageView = {
     
     let imageView = UIImageView()
@@ -73,6 +79,7 @@ class DashboardController: UIViewController, UIImagePickerControllerDelegate, UI
         
     }()
     
+    // Rectangle UI components
     private let imageRec2: UIImageView = {
     
     let imageView = UIImageView()
@@ -82,6 +89,7 @@ class DashboardController: UIViewController, UIImagePickerControllerDelegate, UI
         
     }()
     
+    // Rectangle UI components
     private let imageRec1: UIImageView = {
     
     let imageView = UIImageView()
@@ -91,6 +99,7 @@ class DashboardController: UIViewController, UIImagePickerControllerDelegate, UI
         
     }()
     
+    // UI button for Logout and navigating to the LoginController
     private let logout: UIButton = {
         let button = UIButton()
         button.titleLabel?.font = .systemFont(ofSize: 18, weight: .light)
@@ -101,6 +110,7 @@ class DashboardController: UIViewController, UIImagePickerControllerDelegate, UI
         
     }()
     
+    // UI button for getting started
     private let button: UIButton = {
         let button = UIButton()
         button.backgroundColor = #colorLiteral(red: 0.9450980392, green: 0.9490196078, blue: 0.768627451, alpha: 1)
@@ -112,14 +122,21 @@ class DashboardController: UIViewController, UIImagePickerControllerDelegate, UI
         
     }()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Do any additional setup after loading the view.
+        // We are loading our UI here manually, hard coded UI
+        // Other wise we can use a view to reduce the code size here
+        
+        //Adding a Background Color
         let color: UIColor = #colorLiteral(red: 0.3695068359, green: 0.8321683407, blue: 0.6322148442, alpha: 1)
         self.view.backgroundColor = color
+        
+        // Adding all the subviews
         view.addSubview(logout)
         view.addSubview(imageViewDash)
-        logout.addTarget(self, action: #selector(logoutBut), for: .touchUpInside)
         view.addSubview(imageViewDash)
         view.addSubview(imageRec)
         view.addSubview(imageShip)
@@ -130,20 +147,26 @@ class DashboardController: UIViewController, UIImagePickerControllerDelegate, UI
         view.addSubview(imageRec1)
         view.addSubview(button)
         
+        // Adding the functionality of the buttons
+        logout.addTarget(self, action: #selector(logoutBut), for: .touchUpInside)
+        
     }
 
     
+    // Similiar to login button it takes user back to the main screen
     @objc func logoutBut() {
         let loginVC = LoginController()
-        
         let logVC = UINavigationController(rootViewController: loginVC)
         logVC.modalPresentationStyle = .overFullScreen
         logVC.modalTransitionStyle = .crossDissolve
         self.navigationController?.pushViewController(loginVC, animated: true)
-//        present(navVC, animated: true)
     }
     
     
+    
+    // Adding all the frame and positioning details to all the UI Components otherwise done in Storyboard
+    // Only optimised for iPhone 11 and 12 phones, it can be implemented across all devices after certain changes in the frame values
+    // Future Scope : It takes a lot of time to calculate and place all the components, will be done in future
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -161,12 +184,13 @@ class DashboardController: UIViewController, UIImagePickerControllerDelegate, UI
         
     }
     
+    // It helps disapper the navigation bar that comes as a result of changing the UIControllers
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
-
     
+    // It helps disapper the navigation bar that comes as a result of changing the UIControllers
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)

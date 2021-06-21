@@ -25,7 +25,7 @@ import Parse
 //Check AppDelegate.swift
 class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    //An Image view for the logo
+    //An Image view for the logo 1
     private let imageView: UIImageView = {
     
     let imageView = UIImageView()
@@ -35,6 +35,7 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         
     }()
     
+    //Button for login
     private let button1: UIButton = {
         let button = UIButton()
         button.backgroundColor = #colorLiteral(red: 0.9450980392, green: 0.9490196078, blue: 0.768627451, alpha: 1)
@@ -46,6 +47,7 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         
     }()
     
+//    Button to navigate to Sign UP Screen
     private let button2: UIButton = {
         let button = UIButton()
         button.titleLabel?.font = .systemFont(ofSize: 20, weight: .light)
@@ -76,6 +78,7 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         
     }()
     
+    //Label
     private let label: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
@@ -87,6 +90,7 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         return label
     }()
     
+    //Label
     private let label1: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
@@ -98,6 +102,7 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         return label
     }()
     
+    //Label
     private let label2: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
@@ -110,12 +115,11 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         return label
     }()
     
+    //A UI Textfield taking Username as an Input
     private let textField1: UITextField = {
        
         let textField = UITextField()
-//        textField.layer.cornerRadius = 15.0
         textField.font = UIFont(name: "Avenir Next", size: 15)
-//        textField.borderStyle = UITextField.BorderStyle.roundedRect
         textField.setCorner(radius: 12)
         textField.setLeftPaddingPoints(15)
         textField.backgroundColor = UIColor.white
@@ -125,12 +129,11 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         return textField
     }()
     
+    //A UI Textfield taking Password as an Input
     private let textField2: UITextField = {
        
         let textField = UITextField()
-//        textField.layer.cornerRadius = 15.0
         textField.font = UIFont(name: "Avenir Next", size: 15)
-//        textField.borderStyle = UITextField.BorderStyle.roundedRect
         textField.setCorner(radius: 12)
         textField.setLeftPaddingPoints(15)
         textField.backgroundColor = UIColor.white
@@ -144,12 +147,14 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        // We are loading our UI here manually, hard coded UI
+        // Other wise we can use a view to reduce the code size here
         
         //Adding a Background Color
-        
         let color: UIColor = #colorLiteral(red: 0.4274509804, green: 0.8392156863, blue: 0.631372549, alpha: 1)
         self.view.backgroundColor = color
         
+        // Adding all the subviews
         view.addSubview(imageView2)
         view.addSubview(imageView1)
         view.addSubview(imageView)
@@ -161,32 +166,38 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         view.addSubview(button1)
         view.addSubview(button2)
         
+        
+        // Adding the functionality of the buttons
         button2.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
         button1.addTarget(self, action: #selector(signin), for: .touchUpInside)
-//        button1.addTarget(self, action: #selector(dash), for: .touchUpInside)
         
     }
     
     
     
     
+    //Important functions
+    //It helps navigate between multiple screens
     @objc private func didTapButton() {
+        // As seen in the Appdelegate.swift
+        // In the function we are basically changing rootViewController such that the app
+        // navigates to a different screen with transition
         let notVC = SignupController()
-        
         let navVC = UINavigationController(rootViewController: notVC)
         navVC.modalPresentationStyle = .overFullScreen
         navVC.modalTransitionStyle = .crossDissolve
         present(navVC, animated: true)
     }
     
+    // A function used to Sigin the User
+    // We are using code from the Back4app to check the given user
     @objc func signin(_ sender: Any) {
         
         PFUser.logInWithUsername(inBackground: self.textField1.text!, password: self.textField2.text!) {
                   (user: PFUser?, error: Error?) -> Void in
                   if user != nil {
+                    // Alerting the user
                     self.displayAlert(withTitle: "Login Successful", message: "")
-                   
-                    
                   } else {
                     self.displayAlert(withTitle: "Error", message: error!.localizedDescription)
                   }
@@ -194,6 +205,7 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         }
     
     
+    // An important function
     func displayAlert(withTitle title: String, message: String) {
             let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
@@ -201,18 +213,18 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
                 //For debugging
                 print("Yay! You brought your towel!")
                 
+                // If login is successful then the LoginController takes the user to a dashboard which is an onboarding screen
                 if(title == "Login Successful") {
                     let dashVC = DashboardController()
                     let navVC1 = UINavigationController(rootViewController: dashVC)
                     navVC1.modalPresentationStyle = .overFullScreen
                     navVC1.modalTransitionStyle = .crossDissolve
-
                     self.present(navVC1, animated: true)
                 }
                
 
             }))
-            alert.addChild(DashboardController())
+//            alert.addChild(DashboardController())
             self.present(alert, animated: true)
         }
 
@@ -223,14 +235,13 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         let navVC1 = UINavigationController(rootViewController: dashVC)
         navVC1.modalPresentationStyle = .overFullScreen
         navVC1.modalTransitionStyle = .crossDissolve
-//        self.navigationController?.pushViewController(dashVC, animated: true)
         self.present(navVC1, animated: true)
-        
 
-        
     }
    
-    
+    // Adding all the frame and positioning details to all the UI Components otherwise done in Storyboard
+    // Only optimised for iPhone 11 and 12 phones, it can be implemented across all devices after certain changes in the frame values
+    // Future Scope : It takes a lot of time to calculate and place all the components, will be done in future
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
    
@@ -259,12 +270,13 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
     }
     
     
+    // It helps disapper the navigation bar that comes as a result of changing the UIControllers
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
-
     
+    // It helps disapper the navigation bar that comes as a result of changing the UIControllers
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)

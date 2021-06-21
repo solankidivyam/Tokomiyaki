@@ -8,10 +8,24 @@
 import UIKit
 import Parse
 
+// Explaination
+// MVVM : Future Scope
+// Model : Defines the schema of the app like what type of data will be stored. Like for example a structure
+// View : It basically deals with the the UI elements that go on the screen and the placement of the same. Currently it is being
+//       shown in the Login View Controller only..
+// ViewModel : In layman's terms it basically deals with the logic and working of the app in the back. It deals with the connection of
+//            the view and the mode.
+
+// UIViewController : It deals with all of the MVVM components. It helps the navigation between different screens.
+// We are using it for all the MVVM, we can easily seperate out the components and place them in different files and UI controller only to
+// navigate and display the UI..
+
+// This is the ROOTVIEW Controller since no Storyboard is used, all the code written for all the UICOMPONENTS
 class SignupController: UIViewController {
     
     weak var indicatorSignup: UIActivityIndicatorView!
     
+    //An Image view for the logo 2
     private let imageView3: UIImageView = {
     
     let imageView = UIImageView()
@@ -21,6 +35,7 @@ class SignupController: UIViewController {
         
     }()
     
+    // Button for Signup and registering the user
     private let button3: UIButton = {
         let button = UIButton()
         button.backgroundColor = #colorLiteral(red: 0.9450980392, green: 0.9490196078, blue: 0.768627451, alpha: 1)
@@ -32,6 +47,7 @@ class SignupController: UIViewController {
         
     }()
     
+    // UI button for navigating to the logincontroller screen
     private let button4: UIButton = {
         let button = UIButton()
         button.titleLabel?.font = .systemFont(ofSize: 18, weight: .light)
@@ -62,6 +78,7 @@ class SignupController: UIViewController {
         
     }()
     
+    // Label
     private let label3: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
@@ -73,6 +90,7 @@ class SignupController: UIViewController {
         return label
     }()
     
+    // Label
     private let label4: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
@@ -84,6 +102,7 @@ class SignupController: UIViewController {
         return label
     }()
     
+    // Label
     private let label5: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
@@ -96,6 +115,7 @@ class SignupController: UIViewController {
         return label
     }()
     
+    // Textfield taking Email
     private let textField3: UITextField = {
        
         let textField = UITextField()
@@ -109,6 +129,7 @@ class SignupController: UIViewController {
         return textField
     }()
     
+    // Textfield taking Password
     private let textField4: UITextField = {
        
         let textField = UITextField()
@@ -117,11 +138,12 @@ class SignupController: UIViewController {
         textField.setLeftPaddingPoints(15)
         textField.backgroundColor = UIColor.white
         textField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.7254901961, green: 0.7254901961, blue: 0.7254901961, alpha: 1)])
-        textField.isSecureTextEntry = true
+//        textField.isSecureTextEntry = true
         textField.keyboardType = UIKeyboardType.default
         return textField
     }()
     
+    // Textfield taking Username instead of Name :: :: ::
     private let textField5: UITextField = {
        
         let textField = UITextField()
@@ -135,12 +157,19 @@ class SignupController: UIViewController {
         return textField
     }()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Do any additional setup after loading the view.
+        // We are loading our UI here manually, hard coded UI
+        // Other wise we can use a view to reduce the code size here
+        
+        //Adding a Background Color
         let color: UIColor = #colorLiteral(red: 0.3695068359, green: 0.8321683407, blue: 0.6322148442, alpha: 1)
         self.view.backgroundColor = color
         
+        // Adding all the subviews
         viewSafeAreaInsetsDidChange()
         view.addSubview(imageView3)
         view.addSubview(imageView4)
@@ -154,21 +183,29 @@ class SignupController: UIViewController {
         view.addSubview(button3)
         view.addSubview(button4)
         
+        // Adding the functionality of the buttons
         button4.addTarget(self, action: #selector(didTapButton1), for: .touchUpInside)
         button3.addTarget(self, action: #selector(signup), for: .touchUpInside)
     }
     
+    //Important functions
+    //It helps navigate between multiple screens
     @objc private func didTapButton1() {
-        let notVC = LoginController()
         
+        // As seen in the Appdelegate.swift
+        // In the function we are basically changing rootViewController such that the app
+        // navigates to a different screen with transition
+        let notVC = LoginController()
         let navVC = UINavigationController(rootViewController: notVC)
         navVC.modalPresentationStyle = .overFullScreen
         navVC.modalTransitionStyle = .crossDissolve
-        
         present(navVC, animated: true)
     }
     
     
+    // Adding all the frame and positioning details to all the UI Components otherwise done in Storyboard
+    // Only optimised for iPhone 11 and 12 phones, it can be implemented across all devices after certain changes in the frame values
+    // Future Scope : It takes a lot of time to calculate and place all the components, will be done in future
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     
@@ -197,6 +234,8 @@ class SignupController: UIViewController {
     
     }
     
+    // A function used to Signup the User
+    // We are using code from the Back4app to register the given user
     @objc func signup(_ sender: Any) {
             
         let user = PFUser()
@@ -216,7 +255,7 @@ class SignupController: UIViewController {
                 }
     }
     
-    
+    // An important function displaing alerts for any updates
     func displayAlert(withTitle title: String, message: String) {
             let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "Ok", style: .default)
@@ -225,11 +264,13 @@ class SignupController: UIViewController {
         }
     
     
+    // It helps disapper the navigation bar that comes as a result of changing the UIControllers
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 
+    // It helps disapper the navigation bar that comes as a result of changing the UIControllers
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
