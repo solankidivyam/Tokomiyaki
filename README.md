@@ -37,3 +37,9 @@ navigate and display the UI..
 # Functioning
 
 ![Alt Text](https://github.com/solankidivyam/assignment_ios/blob/main/GIF.gif)
+
+# Running
+Clone the repo in local machine. 
+Choose iPhone 11 or iPhone 12 in simulator.
+Press ⌘ + R
+
