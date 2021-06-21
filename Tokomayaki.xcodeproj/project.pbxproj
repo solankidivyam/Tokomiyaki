@@ -17,6 +17,8 @@
 		0C4E2FB62679A95900F4EEED /* TokomayakiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4E2FB52679A95900F4EEED /* TokomayakiTests.swift */; };
 		0C4E2FC12679A95900F4EEED /* TokomayakiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4E2FC02679A95900F4EEED /* TokomayakiUITests.swift */; };
 		0C5942F6267F71EF00019BD3 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5942F5267F71EF00019BD3 /* DashboardController.swift */; };
+		0C5942FB268035F700019BD3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5942FA268035F700019BD3 /* LoginView.swift */; };
+		0C5942FE2680367D00019BD3 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5942FD2680367D00019BD3 /* LoginViewModel.swift */; };
 		0C6F4C94267BADB20078D516 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F4C93267BADB20078D516 /* Register.swift */; };
 		0C6F4C9F267C6C620078D516 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F4C9E267C6C620078D516 /* Extensions.swift */; };
 		0C9E5253267F2A4900818E42 /* ParseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0C9E5252267F2A4900818E42 /* ParseSwift */; };
@@ -63,6 +65,8 @@
 		0C4E2FC02679A95900F4EEED /* TokomayakiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokomayakiUITests.swift; sourceTree = "<group>"; };
 		0C4E2FC22679A95900F4EEED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C5942F5267F71EF00019BD3 /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
+		0C5942FA268035F700019BD3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		0C5942FD2680367D00019BD3 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		0C6F4C93267BADB20078D516 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		0C6F4C9E267C6C620078D516 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0CA7D63E267B5DA9002A3A23 /* Bulgatti.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bulgatti.ttf; sourceTree = "<group>"; };
@@ -133,6 +137,8 @@
 			children = (
 				0C4E2F9E2679A95300F4EEED /* AppDelegate.swift */,
 				0C4E2FA02679A95300F4EEED /* SceneDelegate.swift */,
+				0C5942F9268035E500019BD3 /* View */,
+				0C5942FC2680365900019BD3 /* ViewModel */,
 				0C6F4C92267BAD8D0078D516 /* Model */,
 				0C6F4C91267BAD230078D516 /* Controller */,
 				0C4E2FA42679A95300F4EEED /* Main.storyboard */,
@@ -160,6 +166,22 @@
 				0C4E2FC22679A95900F4EEED /* Info.plist */,
 			);
 			path = TokomayakiUITests;
+			sourceTree = "<group>";
+		};
+		0C5942F9268035E500019BD3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0C5942FA268035F700019BD3 /* LoginView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0C5942FC2680365900019BD3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0C5942FD2680367D00019BD3 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		0C6F4C91267BAD230078D516 /* Controller */ = {
@@ -464,7 +486,9 @@
 				0C2C6654267DDF8B00C53B18 /* SignupController.swift in Sources */,
 				0C6F4C94267BADB20078D516 /* Register.swift in Sources */,
 				0C5942F6267F71EF00019BD3 /* DashboardController.swift in Sources */,
+				0C5942FB268035F700019BD3 /* LoginView.swift in Sources */,
 				0C4E2FA12679A95300F4EEED /* SceneDelegate.swift in Sources */,
+				0C5942FE2680367D00019BD3 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

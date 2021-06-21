@@ -8,7 +8,21 @@
 import UIKit
 import Parse
 
+//Explaination 
+//MVVM : Future Scope
+//Model : Defines the schema of the app like what type of data will be stored. Like for example a structure
+//View : It basically deals with the the UI elements that go on the screen and the placement of the same. Currently it is being
+//       shown in the Login View Controller only..
+//ViewModel : In layman's terms it basically deals with the logic and working of the app in the back. It deals with the connection of
+//            the view and the mode.
 
+//UIViewController : It deals with all of the MVVM components. It helps the navigation between different screens.
+//We are using it for all the MVVM, we can easily seperate out the components and place them in different files and UI controller only to
+//navigate and display the UI..
+
+
+//This is the ROOTVIEW Controller since no Storyboard is used, all the code written for all the UICOMPONENTS
+//Check AppDelegate.swift
 class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     //An Image view for the logo

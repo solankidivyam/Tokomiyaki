@@ -15,13 +15,12 @@ import Parse
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    
-
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
        
+        //It is an API for the backend connection for the data of our app.
+        //Back4app let's us use the service for free upto 10k users.
         let configuration = ParseClientConfiguration {
             $0.applicationId = "jHlcAhsmBEK4ySzzJZhDM9gq62AybDUzLVV69uiy"
             $0.clientKey = "uM2SUUmbhgGlfcCc8KfuKFUrocrsmUcAOdheTfUp"
@@ -29,6 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         Parse.initialize(with: configuration)
         
+        //We are not using anyking of storyboard
+        //So in order to display viewcontroller we are assigning the LoginController as ROOTVIEWCONTROLLER
+        //Which means that we will see this screen as the main one, after the app starts.
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.rootViewController = UINavigationController(rootViewController: LoginController())
