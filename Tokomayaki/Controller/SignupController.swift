@@ -154,7 +154,7 @@ class SignupController: UIViewController {
         textField.setLeftPaddingPoints(15)
         textField.backgroundColor = UIColor.white
         textField.attributedPlaceholder = NSAttributedString(string: "Username", attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.7254901961, green: 0.7254901961, blue: 0.7254901961, alpha: 1)])
-        textField.autocapitalizationType = .none
+//        textField.autocapitalizationType = .none
         textField.keyboardType = UIKeyboardType.default
         return textField
     }()
