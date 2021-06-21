@@ -9,3 +9,7 @@ A UI design for the project is made in FIGMA. Link here [Figma](https://www.figm
 
 <!-- ![Screenshot](Login.png =250x250) -->
 <img src="https://github.com/solankidivyam/assignment_ios/blob/main/Login.png" width="310" height="320">
+
+# Functioning
+
+![Alt Text](https://github.com/solankidivyam/assignment_ios/blob/main/GIF.gif)
