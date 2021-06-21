@@ -44,6 +44,19 @@ class DashboardController: UIViewController, UIImagePickerControllerDelegate, UI
     }()
     
     //Label
+    private let label6: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.font = UIFont(name: "Avenir", size: 20)
+        label.textColor = UIColor.white
+//        label.text = textfield1.text
+        label.text = LoginController.textField1.text
+        label.numberOfLines = 0
+        
+        return label
+    }()
+    
+    //Label
     private let label2: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
@@ -144,6 +157,7 @@ class DashboardController: UIViewController, UIImagePickerControllerDelegate, UI
         view.addSubview(label)
         view.addSubview(label2)
         view.addSubview(label3)
+        view.addSubview(label6)
         view.addSubview(imageRec1)
         view.addSubview(button)
         
@@ -172,6 +186,7 @@ class DashboardController: UIViewController, UIImagePickerControllerDelegate, UI
         super.viewDidLayoutSubviews()
         
         label.frame = CGRect(x: view.frame.midX/3 - 60, y: view.safeAreaInsets.top + 55, width: 150, height: 100)
+        label6.frame = CGRect(x: view.frame.midX/3 + 30, y: view.safeAreaInsets.top + 60, width: 250, height: 100)
         imageViewDash.frame = CGRect(x: view.frame.midX/3 - 50, y: view.safeAreaInsets.top - 50, width: view.frame.size.width-230, height: view.frame.size.width - 230)
         logout.frame = CGRect(x: view.frame.size.width/3 + 160, y: view.safeAreaInsets.top + 20, width: 120, height: 37)
         imageRec.frame = CGRect(x: 0, y: view.safeAreaInsets.top + 20, width: view.frame.size.width, height: 100)

@@ -21,6 +21,7 @@ import Parse
 // navigate and display the UI..
 
 // This is the ROOTVIEW Controller since no Storyboard is used, all the code written for all the UICOMPONENTS
+
 class SignupController: UIViewController {
     
     weak var indicatorSignup: UIActivityIndicatorView!
@@ -123,6 +124,7 @@ class SignupController: UIViewController {
         textField.setCorner(radius: 12)
         textField.setLeftPaddingPoints(15)
         textField.backgroundColor = UIColor.white
+//        textField.fix(SintextField3)
         textField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.7254901961, green: 0.7254901961, blue: 0.7254901961, alpha: 1)])
         textField.autocapitalizationType = .none
         textField.keyboardType = UIKeyboardType.default
@@ -244,12 +246,21 @@ class SignupController: UIViewController {
         user.password = self.textField4.text
         user.username = self.textField5.text
         
+        
+        
         self.indicatorSignup?.startAnimating()
-                user.signUpInBackground {(succeeded: Bool, error: Error?) -> Void in
+        user.signUpInBackground {(succeeded: Bool, error: Error?) -> Void in
                     self.indicatorSignup?.stopAnimating()
                     if let error = error {
                         self.displayAlert(withTitle: "Error", message: error.localizedDescription)
-                    } else {
+                    }
+                    if (user.email!.count > 56) {
+                        self.displayAlert(withTitle: "More than 56 values in email", message: "Try shorting")
+                    }
+                    if (user.password!.count < 6 || user.password!.count > 27) {
+                        self.displayAlert(withTitle: "Try changing password", message: "Should be greater than 6 characters")
+                    }
+                    else {
                         self.displayAlert(withTitle: "Success", message: "Account has been successfully created")
                     }
                 }

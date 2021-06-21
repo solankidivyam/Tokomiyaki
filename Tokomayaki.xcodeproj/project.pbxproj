@@ -19,6 +19,7 @@
 		0C5942F6267F71EF00019BD3 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5942F5267F71EF00019BD3 /* DashboardController.swift */; };
 		0C5942FB268035F700019BD3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5942FA268035F700019BD3 /* LoginView.swift */; };
 		0C5942FE2680367D00019BD3 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5942FD2680367D00019BD3 /* LoginViewModel.swift */; };
+		0C594301268044D200019BD3 /* ChooseArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C594300268044D200019BD3 /* ChooseArea.swift */; };
 		0C6F4C94267BADB20078D516 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F4C93267BADB20078D516 /* Register.swift */; };
 		0C6F4C9F267C6C620078D516 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F4C9E267C6C620078D516 /* Extensions.swift */; };
 		0C9E5253267F2A4900818E42 /* ParseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0C9E5252267F2A4900818E42 /* ParseSwift */; };
@@ -67,6 +68,7 @@
 		0C5942F5267F71EF00019BD3 /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
 		0C5942FA268035F700019BD3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		0C5942FD2680367D00019BD3 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		0C594300268044D200019BD3 /* ChooseArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseArea.swift; sourceTree = "<group>"; };
 		0C6F4C93267BADB20078D516 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		0C6F4C9E267C6C620078D516 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0CA7D63E267B5DA9002A3A23 /* Bulgatti.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bulgatti.ttf; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				0C5942FC2680365900019BD3 /* ViewModel */,
 				0C6F4C92267BAD8D0078D516 /* Model */,
 				0C6F4C91267BAD230078D516 /* Controller */,
+				0C5942FF268044BB00019BD3 /* SwiftUI */,
 				0C4E2FA42679A95300F4EEED /* Main.storyboard */,
 				0C4E2FA72679A95800F4EEED /* Assets.xcassets */,
 				0C4E2FA92679A95800F4EEED /* LaunchScreen.storyboard */,
@@ -182,6 +185,14 @@
 				0C5942FD2680367D00019BD3 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0C5942FF268044BB00019BD3 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				0C594300268044D200019BD3 /* ChooseArea.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 		0C6F4C91267BAD230078D516 /* Controller */ = {
@@ -489,6 +500,7 @@
 				0C5942FB268035F700019BD3 /* LoginView.swift in Sources */,
 				0C4E2FA12679A95300F4EEED /* SceneDelegate.swift in Sources */,
 				0C5942FE2680367D00019BD3 /* LoginViewModel.swift in Sources */,
+				0C594301268044D200019BD3 /* ChooseArea.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

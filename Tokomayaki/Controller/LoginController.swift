@@ -116,7 +116,7 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
     }()
     
     //A UI Textfield taking Username as an Input
-    private let textField1: UITextField = {
+     static let textField1: UITextField = {
        
         let textField = UITextField()
         textField.font = UIFont(name: "Avenir Next", size: 15)
@@ -158,7 +158,7 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         view.addSubview(imageView2)
         view.addSubview(imageView1)
         view.addSubview(imageView)
-        view.addSubview(textField1)
+        view.addSubview(LoginController.textField1)
         view.addSubview(textField2)
         view.addSubview(label)
         view.addSubview(label1)
@@ -193,7 +193,7 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
     // We are using code from the Back4app to check the given user
     @objc func signin(_ sender: Any) {
         
-        PFUser.logInWithUsername(inBackground: self.textField1.text!, password: self.textField2.text!) {
+        PFUser.logInWithUsername(inBackground: LoginController.textField1.text!, password: self.textField2.text!) {
                   (user: PFUser?, error: Error?) -> Void in
                   if user != nil {
                     // Alerting the user
@@ -250,7 +250,7 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
         
         button2.frame = CGRect(x: view.frame.size.width/3 + 20, y: view.safeAreaInsets.top + 400, width: 100, height: 37)
         
-        textField1.frame = CGRect(x: view.frame.midX/3 + 30, y: view.safeAreaInsets.top + 220, width: 220, height: 37)
+        LoginController.textField1.frame = CGRect(x: view.frame.midX/3 + 30, y: view.safeAreaInsets.top + 220, width: 220, height: 37)
         
         textField2.frame = CGRect(x: view.frame.midX/3 + 30, y: view.safeAreaInsets.top + 270, width: 220, height: 37)
             
